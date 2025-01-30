@@ -1,1 +1,9 @@
 <p>page-B works!</p>
+<p>This page, part of component 1 (out of 2), also display some data about the user from store</p>
+<p>
+    @if (isLogged()) {
+        User email from store: {{ userEmail() }}
+    } @else {
+        But user is not logged in yet
+    }
+</p>

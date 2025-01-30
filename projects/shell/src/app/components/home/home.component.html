@@ -1,5 +1,8 @@
 <mat-card appearance="outlined">
     <mat-card-content>
-        <p>Shell Home Page. User is logged: {{ isLogged() }}</p>
+        <p>Shell Home Page.</p> 
+        <p>
+            {{ !isLogged() ? 'No user loged in. Login to see the pages' : 'Current user '+userEmail() }}
+        </p>
     </mat-card-content>
 </mat-card>

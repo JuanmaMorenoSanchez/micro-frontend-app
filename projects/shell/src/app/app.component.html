@@ -1,9 +1,11 @@
 <mat-toolbar>
     <span>Micro Frontends Demo</span>
-    <span class="spacer"></span>
-    <button class="button-margin" mat-button (click)="!isLogged() ? openLoginDialog() : signOut()">
+    <button class="topbar-spacer" mat-button (click)="!isLogged() ? openLoginDialog() : signOut()">
       {{ !isLogged() ? 'Login' : 'Logout' }}
     </button>
+    <span class="topbar-spacer">
+      <small>{{ userEmail() }}</small>
+    </span>
   </mat-toolbar>
   
   <mat-sidenav-container class="sidenav-container">

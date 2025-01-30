@@ -14,7 +14,7 @@ export class LoginService {
     // Simulate login logic here
     return new Observable(observer => {
       setTimeout(() => {
-        this.store.dispatch(new SetLoginStatus(true));  // Update login status
+        this.store.dispatch(new SetLoginStatus(true, email));  // Update login status
         observer.next();
         observer.complete();
       }, 1000);

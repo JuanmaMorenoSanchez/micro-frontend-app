@@ -22,12 +22,14 @@ import { SetLoginStatus } from './store/actions/login.actions';
 })
 export class AppComponent {
   public isLogged: Signal<boolean | undefined>;
+  public userEmail: Signal<string | undefined>;
 
   constructor(
     public dialog: MatDialog,
     private store: Store
   ) {
-    this.isLogged = toSignal(this.store.select(LoginState.getLoggedIn))
+    this.isLogged = toSignal(this.store.select(LoginState.getLoggedIn));
+    this.userEmail = toSignal(this.store.select(LoginState.getUserEmail));
   }
 
   openLoginDialog(): void {
@@ -41,6 +43,6 @@ export class AppComponent {
   }
 
   signOut(): void {
-    this.store.dispatch(new SetLoginStatus(false));
+    this.store.dispatch(new SetLoginStatus(false, undefined));
   }
 }

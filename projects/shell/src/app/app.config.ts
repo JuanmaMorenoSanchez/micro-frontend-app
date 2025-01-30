@@ -2,7 +2,8 @@ import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } fr
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { NgxsModule } from '@ngxs/store';
+import { NgxsModule  } from '@ngxs/store';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { LoginState } from './store/state/login.state';
 
 export const appConfig: ApplicationConfig = {
@@ -10,5 +11,9 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
     importProvidersFrom(NgxsModule.forRoot([LoginState])),
+
+    importProvidersFrom(NgxsStoragePluginModule.forRoot({
+      keys: ['login'],
+    })),
   ]
 };

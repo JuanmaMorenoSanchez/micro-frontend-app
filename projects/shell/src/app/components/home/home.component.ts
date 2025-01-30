@@ -13,9 +13,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class HomeComponent {
   public isLogged: Signal<boolean | undefined>;
+  public userEmail: Signal<string | undefined>;
 
   constructor(private store: Store) {
     this.isLogged = toSignal(this.store.select(LoginState.getLoggedIn));
+    this.userEmail = toSignal(this.store.select(LoginState.getUserEmail));
   }
 }
 

@@ -1,6 +1,24 @@
 # Angular Micro-Frontend Application
 
-This repository demonstrates an Angular application utilizing a micro-frontend architecture with three distinct projects: `shell`, `component1`, and `component2`.
+This repository demonstrates an Angular application utilizing a micro-frontend architecture with three distinct apps: `shell`, `component1`, and `component2`.
+## Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/JuanmaMorenoSanchez/micro-frontend-app.git
+   cd micro-frontend-app
+
+2. **Install**:
+   npm install
+
+3. **Run**:
+    ng serve shell
+    ng serve component1
+    ng serve component2
+
+    They should be running by default in ports 4200. 4201 and 4202
+
 
 ## Project Structure
 
@@ -42,20 +60,3 @@ Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (version 14.x or later)
 - [Angular CLI](https://angular.io/cli) (version 12.x or later)
 
-## Installation
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/JuanmaMorenoSanchez/micro-frontend-app.git
-   cd micro-frontend-app
-
-2. **Install**:
-   npm install
-
-3. **Run**:
-    ng serve shell
-    ng serve component1
-    ng serve component2
-
-    They should be running by default in ports 4200. 4201 and 4202

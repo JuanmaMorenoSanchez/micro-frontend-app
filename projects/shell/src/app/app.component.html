@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<mat-toolbar>
+    <span>Micro frontends demo </span>
+    <button class="button-margin" mat-button (click)="!isLogged() ? openLoginDialog() : signOut()">{{ !isLogged() ? 'Login' : 'Logout'}}</button>
+</mat-toolbar>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

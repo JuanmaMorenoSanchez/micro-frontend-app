@@ -6,6 +6,7 @@ This repository demonstrates an Angular application utilizing a micro-frontend a
 
 The repository is organized as follows:
 
+```
 root/
 ├── angular.json
 ├── package.json
@@ -14,6 +15,7 @@ root/
     ├── shell/
     ├── component1/
     └── component2/
+```
 
 - **root/**: Contains global configuration files and settings for the Angular workspace.
 - **projects/**: Houses the individual Angular projects:
@@ -26,10 +28,12 @@ root/
 The application's routing is configured as follows:
 
 - `/home`: Loads the `HomeComponent` from the `shell` application.
-- `/component1/pageA`: Loads `PageAComponent` from `component1`.
-- `/component1/pageB`: Loads `PageBComponent` from `component1`.
-- `/component2/pageC`: Loads `PageCComponent` from `component2`.
-- `/component2/pageD`: Loads `PageDComponent` from `component2`.
+- `/about`: Loads `About` from the `shell`  application.
+- `/pageA`: Loads `PageAComponent` from `component1` application.
+- `/pageB`: Loads `PageBComponent` from `component1` application.
+- `/pageC`: Loads `PageCComponent` from `component2` application.
+- `/pageD`: Loads `PageDComponent` from `component2` application.
+
 
 ## Prerequisites
 

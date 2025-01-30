@@ -1,7 +1,29 @@
 <mat-toolbar>
-    <span>Micro frontends demo </span>
-    <button class="button-margin" mat-button (click)="!isLogged() ? openLoginDialog() : signOut()">{{ !isLogged() ? 'Login' : 'Logout'}}</button>
-</mat-toolbar>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+    <span>Micro Frontends Demo</span>
+    <span class="spacer"></span>
+    <button class="button-margin" mat-button (click)="!isLogged() ? openLoginDialog() : signOut()">
+      {{ !isLogged() ? 'Login' : 'Logout' }}
+    </button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" routerLinkActive="active">Home</a>
+        @if(isLogged()) {
+            <a mat-list-item routerLink="/pageA" routerLinkActive="active">Page A</a>
+            <a mat-list-item routerLink="/pageB" routerLinkActive="active">Page B</a>
+            <a mat-list-item routerLink="/pageC" routerLinkActive="active">Page C</a>
+            <a mat-list-item routerLink="/pageD" routerLinkActive="active">Page D</a>
+        }
+        <a mat-list-item routerLink="/about" routerLinkActive="active">About</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

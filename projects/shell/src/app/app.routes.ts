@@ -2,14 +2,9 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
-    {
-        path: 'component1',
-        loadComponent: () =>
-            loadRemoteModule('component1', './Component1').then((m) => m.AppComponent),
-            canActivate: [AuthGuard],
-    },
     {
         path: 'pageA',
         loadComponent: () =>
@@ -20,12 +15,6 @@ export const routes: Routes = [
         path: 'pageB',
         loadComponent: () =>
             loadRemoteModule('component1', './PageB').then((m) => m.PageBComponent),
-            canActivate: [AuthGuard],
-    },
-    {
-        path: 'component2',
-        loadComponent: () =>
-            loadRemoteModule('component2', './Component2').then((m) => m.AppComponent),
             canActivate: [AuthGuard],
     },
     {
@@ -40,7 +29,13 @@ export const routes: Routes = [
             loadRemoteModule('component2', './PageD').then((m) => m.PageDComponent),
             canActivate: [AuthGuard],
     },
-    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { 
+        path: 'about', 
+        component: AboutComponent, pathMatch: 'full' 
+    },
+    { 
+        path: '', 
+        component: HomeComponent, pathMatch: 'full' },
     {
         path: '**',
         component: HomeComponent,
